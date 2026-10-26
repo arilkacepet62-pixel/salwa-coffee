@@ -213,21 +213,6 @@
                 </div>
             </a>
 
-            <!-- Card 4: Go-Food / Delivery Options -->
-            <button onclick="openDeliveryModal()" class="w-full rounded-2xl py-4 px-5 flex items-center justify-between glass-card-dark card-hover shadow-lg group relative overflow-hidden text-left" id="card4">
-                <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-amber-500 to-coffee-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div class="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
-                    <i class="fa-solid fa-motorcycle text-base"></i>
-                </div>
-                <div class="flex-grow pl-3.5">
-                    <div class="font-semibold text-sm text-slate-100 dark:text-slate-100 light:text-zinc-900 group-hover:text-orange-500 transition-colors">Order Online</div>
-                    <div class="text-[11px] text-slate-400 dark:text-slate-400 light:text-zinc-500 font-normal">GoFood, GrabFood & ShopeeFood</div>
-                </div>
-                <div class="w-8 h-8 rounded-full flex items-center justify-center text-slate-500 group-hover:text-orange-500 group-hover:translate-x-1 transition-all">
-                    <i class="fa-solid fa-chevron-right text-xs"></i>
-                </div>
-            </button>
-
         </div>
     </main>
 
@@ -260,67 +245,6 @@
             <div class="pt-3.5 border-t border-zinc-800 mt-3">
                 <a href="https://wa.me/6283818935831?text=Halo%20Salwa%20Coffee,%20saya%20ingin%20pesan%20menu" target="_blank" class="w-full py-3 bg-gradient-to-r from-amber-500 to-coffee-600 text-white font-semibold rounded-2xl text-xs text-center block shadow-glow hover:opacity-95 transition">
                     <i class="fa-brands fa-whatsapp text-sm mr-1.5"></i> Pesan Langsung via WhatsApp
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL 2: DELIVERY MERCHANTS -->
-    <div id="deliveryModal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/70 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
-        <div id="deliveryModalBox" class="bg-zinc-900 border border-zinc-800 text-slate-100 w-full max-w-md rounded-t-3xl sm:rounded-3xl p-5 shadow-2xl transform translate-y-full sm:translate-y-4 transition-transform duration-300">
-            <div class="flex items-center justify-between border-b border-zinc-800 pb-3.5 mb-4">
-                <div class="flex items-center space-x-2.5">
-                    <div class="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-500">
-                        <i class="fa-solid fa-truck-fast text-sm"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-base text-slate-100">Order Online</h3>
-                        <p class="text-[11px] text-slate-400">Pilih aplikasi pesan antar favoritmu</p>
-                    </div>
-                </div>
-                <button onclick="closeModal('deliveryModal')" class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center text-slate-400 hover:text-white transition">
-                    <i class="fa-solid fa-xmark text-sm"></i>
-                </button>
-            </div>
-
-            <div class="space-y-2.5">
-                <a href="https://gofood.co.id" target="_blank" class="flex items-center justify-between p-3.5 rounded-2xl bg-zinc-800/60 hover:bg-zinc-800 border border-zinc-700/50 transition group">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-9 h-9 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center font-bold text-xs">
-                            <i class="fa-solid fa-motorcycle"></i>
-                        </div>
-                        <div>
-                            <span class="text-xs font-semibold text-slate-100 group-hover:text-amber-400 transition">GoFood</span>
-                            <p class="text-[10px] text-slate-400">Pesan lewat aplikasi Gojek</p>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-chevron-right text-xs text-slate-500 group-hover:translate-x-1 transition"></i>
-                </a>
-
-                <a href="https://grab.com" target="_blank" class="flex items-center justify-between p-3.5 rounded-2xl bg-zinc-800/60 hover:bg-zinc-800 border border-zinc-700/50 transition group">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">
-                            <i class="fa-solid fa-utensils"></i>
-                        </div>
-                        <div>
-                            <span class="text-xs font-semibold text-slate-100 group-hover:text-emerald-400 transition">GrabFood</span>
-                            <p class="text-[10px] text-slate-400">Pesan lewat aplikasi Grab</p>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-chevron-right text-xs text-slate-500 group-hover:translate-x-1 transition"></i>
-                </a>
-
-                <a href="https://shopee.co.id" target="_blank" class="flex items-center justify-between p-3.5 rounded-2xl bg-zinc-800/60 hover:bg-zinc-800 border border-zinc-700/50 transition group">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-9 h-9 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold text-xs">
-                            <i class="fa-solid fa-bag-shopping"></i>
-                        </div>
-                        <div>
-                            <span class="text-xs font-semibold text-slate-100 group-hover:text-orange-400 transition">ShopeeFood</span>
-                            <p class="text-[10px] text-slate-400">Pesan lewat aplikasi Shopee</p>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-chevron-right text-xs text-slate-500 group-hover:translate-x-1 transition"></i>
                 </a>
             </div>
         </div>
@@ -376,7 +300,51 @@
             { name: "Vanila", price: "Rp 15.000", desc: "Susu manis lembut beraroma vanila.", image: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=300&q=80" },
             { name: "Hazelnut", price: "Rp 15.000", desc: "Susu dengan citarasa gurih kacang hazelnut.", image: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=300&q=80" },
             { name: "Caramel", price: "Rp 15.000", desc: "Susu manis dipadu karamel yang lembut.", image: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=300&q=80" },
-            { name: "Strawberry", price: "Rp 15.000", desc: "Minuman susu dengan rasa strawberi manis asam segar.", image: "https://images.unsplash.com/photo-1553787499-6f9133860278?auto=format&fit=crop&w=300&q=80" }
+            { name: "Strawberry", price: "Rp 15.000", desc: "Minuman susu dengan rasa strawberi manis asam segar.", image: "https://images.unsplash.com/photo-1553787499-6f9133860278?auto=format&fit=crop&w=300&q=80" },
+           
+            // Food
+            {
+                name: "Donat",
+                price: "Rp 10.000",
+                desc: "Donat lembut dengan tekstur empuk dan rasa manis yang pas, cocok untuk menemani waktu santai.",
+                image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                name: "Roti Maryam",
+                price: "Rp 12.000",
+                desc: "Roti pipih berlapis mirip roti canai, dengan tekstur lembut, rasa gurih, dan bagian luar yang sedikit renyah.",
+                image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                name: "Kentang Goreng",
+                price: "Rp 11.000",
+                desc: "Kentang goreng keemasan dengan tekstur renyah di luar dan lembut di dalam, cocok untuk teman nongkrong.",
+                image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                name: "Otak-Otak",
+                price: "Rp 10.000",
+                desc: "Otak-otak dengan tekstur kenyal dan rasa gurih yang nikmat, cocok disantap sebagai camilan saat bersantai.",
+                image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                name: "Naget",
+                price: "Rp 11.000",
+                desc: "Naget ayam dengan lapisan luar yang renyah dan bagian dalam yang lembut, pas untuk camilan kapan saja.",
+                image: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                name: "Mix Snack",
+                price: "Rp 18.000",
+                desc: "Kombinasi kentang goreng, naget, dan otak-otak dalam satu sajian. Cocok buat berbagi dan menikmati aneka camilan favorit.",
+                image: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                name: "Dimsum",
+                price: "Rp 15.000",
+                desc: "Dimsum hangat dengan isian gurih dan tekstur lembut, semakin nikmat disantap bersama saus favorit.",
+                image: "https://images.unsplash.com/photo-1563245372-3c2a8f7c7f9d?auto=format&fit=crop&w=500&q=80"
+            }
         ];
 
         // Dark / Light Theme Toggle Function
@@ -389,8 +357,7 @@
             const cards = [
                 document.getElementById('card1'), 
                 document.getElementById('card2'), 
-                document.getElementById('card3'), 
-                document.getElementById('card4')
+                document.getElementById('card3')
             ];
 
             if (isDark) {
@@ -439,14 +406,6 @@
             box.classList.remove('translate-y-full', 'sm:translate-y-4');
         }
 
-        // Open Delivery Modal Function
-        function openDeliveryModal() {
-            const modal = document.getElementById('deliveryModal');
-            const box = document.getElementById('deliveryModalBox');
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            box.classList.remove('translate-y-full', 'sm:translate-y-4');
-        }
-
         // Close Modal Helper
         function closeModal(id) {
             const modal = document.getElementById(id);
@@ -472,7 +431,6 @@
         // Close modal when clicking dark overlay
         window.onclick = function(e) {
             if (e.target.id === 'menuModal') closeModal('menuModal');
-            if (e.target.id === 'deliveryModal') closeModal('deliveryModal');
         };
     </script>
 </body>
