@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salwa Coffee | Official Link-in-Bio</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        coffee: {
+                            50: '#fdfbf7',
+                            100: '#f7f2e8',
+                            200: '#eee3d0',
+                            500: '#c89253',
+                            600: '#a86f37',
+                            800: '#3d2516',
+                            900: '#1e120a',
+                        }
+                    },
+                    boxShadow: {
+                        'glow': '0 0 25px -5px rgba(200, 146, 83, 0.3)',
+                        'glow-dark': '0 0 25px -5px rgba(200, 146, 83, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS Styles & Animations -->
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Ambient Glow Background */
+        .ambient-bg-dark {
+            background-color: #0f0d0c;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(200, 146, 83, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(168, 111, 55, 0.12) 0px, transparent 50%);
+        }
+
+        .ambient-bg-light {
+            background-color: #f5f3ef;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(200, 146, 83, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(247, 242, 232, 0.8) 0px, transparent 50%);
+        }
+
+        /* Glass Cards */
+        .glass-card-dark {
+            background: rgba(26, 22, 20, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card-light {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* Hover Shimmer Effect */
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-3px) scale(1.01);
+        }
+
+        .card-hover:active {
+            transform: translateY(0) scale(0.99);
+        }
+    </style>
+</head>
+
+<body class="ambient-bg-dark text-slate-100 min-h-screen flex flex-col items-center justify-between py-6 px-4 selection:bg-coffee-500 selection:text-white" id="bodyElem">
+
+    <!-- Top Action Bar -->
+    <header class="w-full max-w-md flex justify-between items-center px-2 mb-6">
+        <!-- Brand Initials / Mini Tag -->
+        <div class="flex items-center space-x-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse inline-block"></span>
+            <span class="text-[11px] font-semibold tracking-wider uppercase text-emerald-500/90 dark:text-emerald-400">Kedai Buka</span>
+        </div>
+
+        <!-- Action Controls (Theme Toggle & Share Button) -->
+        <div class="flex items-center space-x-2.5">
+            <button onclick="toggleTheme()" class="w-10 h-10 rounded-full glass-card-dark flex items-center justify-center text-amber-500 hover:scale-110 active:scale-95 transition-all shadow-lg" title="Ganti Mode Tampilan">
+                <i id="themeIcon" class="fa-solid fa-moon text-sm"></i>
+            </button>
+            <button onclick="shareLink()" class="w-10 h-10 rounded-full glass-card-dark flex items-center justify-center text-slate-300 dark:text-slate-200 hover:scale-110 active:scale-95 transition-all shadow-lg" title="Bagikan Link">
+                <i class="fa-solid fa-arrow-up-from-bracket text-xs"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="w-full max-w-md flex-grow flex flex-col items-center">
+
+        <!-- Profile Section -->
+        <div class="mb-8 text-center flex flex-col items-center">
+            
+            <!-- Logo Image -->
+            <div class="w-28 h-28 rounded-full overflow-hidden">
+                <img 
+                    id="salwaLogo"
+                    src="https://instagram.fcbn1-1.fna.fbcdn.net/v/t51.2885-19/71537940_1414267668723709_4933880252926525440_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy42OTMuQzMifQ%3D%3D&_nc_ohc=zJ8BLRd-fWoQ7kNvwGrWflQ&_nc_oc=AdoJ048xomp7YwhxW67ubaOU1bGFLmeGsiemk14o5Esg_5fRJk4SlZPW6ZgjgAkTKbA&_nc_zt=24&_nc_ht=instagram.fcbn1-1.fna&_nc_ss=7baaf&oh=00_AQMrWKpZ3BZx4UnFVPmWxeWRKn-vXOAuASdBgMCRSRSNOQ&oe=6ACC66AA" 
+                    alt="Salwa Coffee Logo" 
+                    class="w-full h-full object-cover rounded-full"
+                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=300&q=80';"
+                />
+            </div>
+
+            <!-- Profile Title & Tagline -->
+            <h1 class="text-2xl font-extrabold tracking-tight mt-4 text-slate-100 dark:text-slate-100 light:text-zinc-900 lowercase flex items-center gap-1.5" id="brandTitle">
+                salwa coffee
+            </h1>
+            <p class="text-xs text-coffee-500 dark:text-coffee-500 font-medium tracking-wide mt-1">Ngopi Ingdalm Pondok</p>
+            
+            <!-- Quick Chips -->
+            <div class="flex items-center gap-2 mt-3">
+                <span class="text-[10px] px-2.5 py-1 rounded-full bg-white/5 dark:bg-white/5 light:bg-black/5 border border-white/10 dark:border-white/10 light:border-black/10 text-slate-400 dark:text-slate-400 light:text-zinc-600 font-medium">
+                    <i class="fa-solid fa-mug-hot text-amber-500 mr-1"></i> Artisan Brew
+                </span>
+                <span class="text-[10px] px-2.5 py-1 rounded-full bg-white/5 dark:bg-white/5 light:bg-black/5 border border-white/10 dark:border-white/10 light:border-black/10 text-slate-400 dark:text-slate-400 light:text-zinc-600 font-medium">
+                    <i class="fa-solid fa-wifi text-amber-500 mr-1"></i> Fast Wi-Fi
+                </span>
+            </div>
+        </div>
+
+        <!-- LINK PILL CARDS CONTAINER -->
+        <div class="w-full space-y-3.5">
+
+            <!-- Card 1: Beverage Menu (Direct PDF Link) -->
+            <a href="contoh.pdf" target="_blank" class="w-full rounded-2xl py-4 px-5 flex items-center justify-between glass-card-dark card-hover shadow-lg group relative overflow-hidden text-left" id="card1">
+                <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-amber-500 to-coffee-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
+                    <i class="fa-solid fa-glass-water text-lg"></i>
+                </div>
+                <div class="flex-grow pl-3.5">
+                    <div class="font-semibold text-sm text-slate-100 dark:text-slate-100 light:text-zinc-900 group-hover:text-amber-500 transition-colors">Daftar Menu</div>
+                    <div class="text-[11px] text-slate-400 dark:text-slate-400 light:text-zinc-500 font-normal">Signature Drinks, Kopi Susu Series, Mocktail, & Milk Based</div>
+                </div>
+                <div class="w-8 h-8 rounded-full flex items-center justify-center text-slate-500 group-hover:text-amber-500 group-hover:translate-x-1 transition-all">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </div>
+            </a>
+
+            <!-- Card 2: Info & Reservation (WhatsApp) -->
+            <a href="https://wa.me/6283818935831?text=Halo%20Salwa%20Coffee,%20saya%20ingin%20info%20&%20reservasi" target="_blank" class="w-full rounded-2xl py-4 px-5 flex items-center justify-between glass-card-dark card-hover shadow-lg group relative overflow-hidden" id="card2">
+                <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-emerald-500 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                </div>
+                <div class="flex-grow pl-3.5">
+                    <div class="font-semibold text-sm text-slate-100 dark:text-slate-100 light:text-zinc-900 group-hover:text-emerald-500 transition-colors">Info & Reservation</div>
+                    <div class="text-[11px] text-slate-400 dark:text-slate-400 light:text-zinc-500 font-normal">Chat langsung via WhatsApp</div>
+                </div>
+                <div class="w-8 h-8 rounded-full flex items-center justify-center text-slate-500 group-hover:text-emerald-500 group-hover:translate-x-1 transition-all">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </div>
+            </a>
+
+            <!-- Card 3: Location (Google Maps) -->
+            <a href="https://maps.google.com/?q=Salwa+Coffee" target="_blank" class="w-full rounded-2xl py-4 px-5 flex items-center justify-between glass-card-dark card-hover shadow-lg group relative overflow-hidden" id="card3">
+                <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-amber-500 to-coffee-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-500 group-hover:bg-rose-500 group-hover:text-white transition-all duration-300">
+                    <i class="fa-solid fa-location-dot text-base"></i>
+                </div>
+                <div class="flex-grow pl-3.5">
+                    <div class="font-semibold text-sm text-slate-100 dark:text-slate-100 light:text-zinc-900 group-hover:text-rose-500 transition-colors">Location & Navigation</div>
+                    <div class="text-[11px] text-slate-400 dark:text-slate-400 light:text-zinc-500 font-normal">Petunjuk arah Google Maps</div>
+                </div>
+                <div class="w-8 h-8 rounded-full flex items-center justify-center text-slate-500 group-hover:text-rose-500 group-hover:translate-x-1 transition-all">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 bg-zinc-900 border border-zinc-700 text-white px-4 py-2.5 rounded-full text-xs font-medium shadow-2xl opacity-0 pointer-events-none transition-all duration-300 z-50 flex items-center space-x-2">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+        <span>Link berhasil tersalin!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-10 text-center text-[11px] text-slate-400 dark:text-slate-400 light:text-zinc-500 tracking-wide">
+        © Salwa Coffee · Artisan Coffee & Beverage
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Dark / Light Theme Toggle Function
+        let isDark = true;
+        function toggleTheme() {
+            isDark = !isDark;
+            const html = document.documentElement;
+            const body = document.getElementById('bodyElem');
+            const themeIcon = document.getElementById('themeIcon');
+            const cards = [
+                document.getElementById('card1'), 
+                document.getElementById('card2'), 
+                document.getElementById('card3')
+            ];
+
+            if (isDark) {
+                html.classList.add('dark');
+                body.className = 'ambient-bg-dark text-slate-100 min-h-screen flex flex-col items-center justify-between py-6 px-4 selection:bg-coffee-500 selection:text-white';
+                themeIcon.className = 'fa-solid fa-moon text-amber-500 text-sm';
+                cards.forEach(c => {
+                    if (c) c.className = c.className.replace('glass-card-light', 'glass-card-dark');
+                });
+            } else {
+                html.classList.remove('dark');
+                body.className = 'ambient-bg-light text-zinc-900 min-h-screen flex flex-col items-center justify-between py-6 px-4 selection:bg-coffee-500 selection:text-white';
+                themeIcon.className = 'fa-solid fa-sun text-amber-500 text-sm';
+                cards.forEach(c => {
+                    if (c) c.className = c.className.replace('glass-card-dark', 'glass-card-light');
+                });
+            }
+        }
+
+        // Share Link Function
+        function shareLink() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Salwa Coffee - Official Link',
+                    url: window.location.href
+                });
+            } else {
+                const toast = document.getElementById('toast');
+                toast.classList.remove('opacity-0', 'pointer-events-none');
+                setTimeout(() => toast.classList.add('opacity-0', 'pointer-events-none'), 2500);
+            }
+        }
+    </script>
+</body>
+</html>
